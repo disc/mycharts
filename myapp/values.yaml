@@ -25,13 +25,9 @@ maxSurge: 1
 image:
   ## Docker Registry/Hub image name and tag
   ##
-  registry: registry.k8s.community
-  name: myapp
+  registry: docker.io
+  repository: disc/go-api
   tag: 0.1.0
-
-  ## Docker Registry/Hub auth secret name, always use `registry-pull-secret` if registry inside if k8s
-  ##
-  pullSecretName: registry-pull-secret
 
   ## Docker Registry/Hub image pull policy
   ##
@@ -44,33 +40,25 @@ ingress:
 
   ## Ingress annotations
   ##
-  # annotations:
-  #   kubernetes.io/ingress.class: nginx
+  annotations:
+    kubernetes.io/ingress.class: nginx
   #   kubernetes.io/tls-acme: 'true'
 
   ## Ingress hostnames
   ## Must be provided if Ingress is enabled
   ##
   hosts:
-  - services.k8s.community
+  - go-api.test
 
   ## Ingress path feature allow access to service through path 
   ## example: https://hostname/namespace/servicename
   ##
   usePath: true
 
-  ## Ingress TLS configuration
-  ## Secrets must be manually created in the namespace
-  ##
-  tls:
-  - secretName: tls-secret
-    hosts:
-    - services.k8s.community
-
 service:
   ## App container name
   ##
-  name: myapp
+  name: go-api
   
   ## Service Type
   ## For minikube, set this to NodePort, elsewhere use ClusterIP

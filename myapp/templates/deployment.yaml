@@ -1,4 +1,4 @@
-apiVersion: extensions/v1beta1
+apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: {{ template "app.fullname" . }}
@@ -22,25 +22,19 @@ spec:
       labels:
         app: {{ template "fullname" . }}
     spec:
-      imagePullSecrets:
-      - name: {{ .Values.image.pullSecretName }}
       containers:
       - name: {{ .Chart.Name }}
-        {{- if eq .Release.Namespace "default" }}
         image: "{{ .Values.image.registry }}/{{ .Values.image.name }}:{{ .Values.image.tag }}"
-        {{- else }}
-        image: "{{ .Values.image.registry }}/{{ .Release.Namespace }}/{{ .Values.image.name }}:{{ .Values.image.tag }}"
-        {{- end }}
         imagePullPolicy: {{ .Values.image.pullPolicy }}
         ports:
         - containerPort: {{ .Values.service.internalPort }}
         livenessProbe:
           httpGet:
-            path: /healthz
+            path: /liveness
             port: {{ .Values.service.internalPort }}
         readinessProbe:
           httpGet:
-            path: /info
+            path: /readiness
             port: {{ .Values.service.internalPort }}
         resources:
 {{ toYaml .Values.resources | indent 12 }}

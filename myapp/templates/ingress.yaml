@@ -26,21 +26,9 @@ spec:
   - host: {{ . }}
     http:
       paths:
-    {{- if $usePath }}
-      {{- if eq $namespace "default" }}
-      - path: /{{ $serviceName }}
-      {{- else }}
-      - path: /{{ $namespace }}/{{ $serviceName }}
-      {{- end }}
+      - path: /
         backend:
-    {{- else }}
-      - backend:
-    {{- end }}
           serviceName: {{ printf "%s-%s" $serviceName "v0" | trunc 63 }}
           servicePort: {{ $servicePort }}
-  {{- end -}}
-  {{- if .Values.ingress.tls }}
-  tls:
-{{ toYaml .Values.ingress.tls | indent 4 }}
   {{- end -}}
 {{- end -}}
