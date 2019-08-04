@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: {{ template "app.fullname" . }}
   labels:
-    app: {{ template "fullname" . }}
+    app: {{ template "app.fullname" . }}
     chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
     component: "{{ .Values.service.name }}"
     heritage: "{{ .Release.Service }}"
@@ -11,7 +11,7 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: "{{ template "fullname" . }}"
+      app: {{ template "app.fullname" . }}
       release: {{ .Release.Name | quote }}
   replicas: {{ .Values.replicaCount }}
   revisionHistoryLimit: {{ .Values.revisionHistoryLimit }}
@@ -24,7 +24,7 @@ spec:
   template:
     metadata:
       labels:
-        app: "{{ template "fullname" . }}"
+        app: {{ template "app.fullname" . }}
     spec:
       containers:
       - name: {{ .Chart.Name }}
