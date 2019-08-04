@@ -10,9 +10,10 @@ metadata:
   {{- if .Values.ingress.usePath }}
     ingress.kubernetes.io/rewrite-target: /
   {{ end }}
-  {{- range $key, $value := .Values.ingress.annotations }}
-    {{ $key }}: {{ $value | quote }}
-  {{- end -}}
+  # {{- range $key, $value := .Values.ingress.annotations }}
+  #   {{ $key }}: {{ $value | quote }}
+  # {{- end -}}
+    kubernetes.io/ingress.class: nginx
   labels:
     app: {{ template "fullname" . }}
     chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
