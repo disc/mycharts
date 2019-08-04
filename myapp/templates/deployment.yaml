@@ -20,7 +20,7 @@ spec:
   template:
     metadata:
       labels:
-        app: {{ template "fullname" . }}
+        app: "{{ .Values.service.name }}"
     spec:
       containers:
       - name: {{ .Chart.Name }}
