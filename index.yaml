@@ -1,9 +1,9 @@
 apiVersion: v1
 entries:
   myapp:
-  - created: 2019-08-04T22:45:00.7109+03:00
+  - created: 2019-08-04T23:05:21.295176+03:00
     description: A Helm chart template for Kubernetes charts repository
-    digest: aeeaf0ab60102878f747e6396acc42701e0adc31c70013a1baf7dcab648865ff
+    digest: 959fbae2335a064456045c76e78d2be0e783036ce8975fd7726a6adbacfd6c2e
     engine: gotpl
     home: https://k8s.community/
     maintainers:
@@ -15,7 +15,7 @@ entries:
     urls:
     - https://disc.github.io/mycharts/myapp-0.0.12.tgz
     version: 0.0.12
-  - created: 2019-08-04T22:45:00.710597+03:00
+  - created: 2019-08-04T23:05:21.2949+03:00
     description: A Helm chart template for Kubernetes charts repository
     digest: 6330d7b7af15b7181137fb9cbec483b42e95bd72dd3bdf0c7275f72a5678203a
     engine: gotpl
@@ -29,7 +29,7 @@ entries:
     urls:
     - https://disc.github.io/mycharts/myapp-0.0.10.tgz
     version: 0.0.10
-  - created: 2019-08-04T22:45:00.71281+03:00
+  - created: 2019-08-04T23:05:21.297405+03:00
     description: A Helm chart template for Kubernetes charts repository
     digest: d14bdc89ba4e8483c1ab22d1180702154a693365812ee341357d2d1432f28584
     engine: gotpl
@@ -43,7 +43,7 @@ entries:
     urls:
     - https://disc.github.io/mycharts/myapp-0.0.9.tgz
     version: 0.0.9
-  - created: 2019-08-04T22:45:00.712309+03:00
+  - created: 2019-08-04T23:05:21.29667+03:00
     description: A Helm chart template for Kubernetes charts repository
     digest: e221b623f6376ae3f558a1b4fbe97529c8ad41a3d5a48640126aa4a1c32bcf3a
     engine: gotpl
@@ -57,7 +57,7 @@ entries:
     urls:
     - https://disc.github.io/mycharts/myapp-0.0.8.tgz
     version: 0.0.8
-  - created: 2019-08-04T22:45:00.711846+03:00
+  - created: 2019-08-04T23:05:21.296168+03:00
     description: A Helm chart template for Kubernetes charts repository
     digest: 8bb4cab1093d70087d7300aa83718a2fa524aef037c1fc2cfd69468b2be324d4
     engine: gotpl
@@ -71,7 +71,7 @@ entries:
     urls:
     - https://disc.github.io/mycharts/myapp-0.0.7.tgz
     version: 0.0.7
-  - created: 2019-08-04T22:45:00.711332+03:00
+  - created: 2019-08-04T23:05:21.295612+03:00
     description: A Helm chart template for Kubernetes charts repository
     digest: b91b4d9b051eb43966915f0c9ca6c8f9d3f6d56dd29682a29c33a4949237b81a
     engine: gotpl
@@ -85,4 +85,4 @@ entries:
     urls:
     - https://disc.github.io/mycharts/myapp-0.0.6.tgz
     version: 0.0.6
-generated: 2019-08-04T22:45:00.70956+03:00
+generated: 2019-08-04T23:05:21.294142+03:00

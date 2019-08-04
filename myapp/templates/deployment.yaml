@@ -9,6 +9,10 @@ metadata:
     heritage: "{{ .Release.Service }}"
     release: "{{ .Release.Name }}"
 spec:
+  selector:
+    matchLabels:
+      app: "{{ template "fullname" . }}"
+      release: {{ .Release.Name | quote }}
   replicas: {{ .Values.replicaCount }}
   revisionHistoryLimit: {{ .Values.revisionHistoryLimit }}
   minReadySeconds: {{ .Values.minReadySeconds }}
@@ -20,7 +24,7 @@ spec:
   template:
     metadata:
       labels:
-        app: "{{ .Values.service.name }}"
+        app: "{{ template "fullname" . }}"
     spec:
       containers:
       - name: {{ .Chart.Name }}
